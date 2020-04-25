@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "target": "es6",
+        "module": "commonjs",
+        "sourceMap": true,
+        "declaration": true,
+        // "outFile": "../out/jueying.js",
+        "outDir": "../out",
+        "rootDir": ".",
+        "jsx": "react",
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "baseUrl": "./",
+        "paths": {
+            "csstype": [
+                "../node_modules/csstype/index.d.ts"
+            ],
+            "@tarojs/components": [
+                "../node_modules/@tarojs/components/types/index.d.ts"
+            ],
+            "maishu-jueying-core": [
+                "../node_modules/maishu-jueying-core/out/index.d.ts"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "lib"
+    ],
+}

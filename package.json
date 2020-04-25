@@ -1,6 +1,6 @@
 {
     "name": "taro-builder-core",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "types": "./out/index.d.ts",
     "main": "./dist/index.js",
     "scripts": {
@@ -30,5 +30,10 @@
         "load-grunt-tasks": "^4.0.0",
         "webpack": "^4.41.4",
         "webpack-cli": "^3.3.10"
-    }
+    },
+    "files": [
+        "dist",
+        "out",
+        "src"
+    ]
 }

@@ -17,11 +17,13 @@ export interface PageViewState {
 
 let PageViewContext = React.createContext<{ pageView?: PageView }>({})
 
-const BodyTypeName = "section";
-
 @component()
 export class PageView extends React.Component<PageViewProps> {
     childComponentCreated = new Callback<{ component: React.Component }>();
+
+    static headerTypeName = "header";
+    static footerTypeName = "footer";
+    static bodyTypeName = "section";
 
     constructor(props: PageViewProps) {
         super(props)
@@ -41,9 +43,13 @@ export class PageView extends React.Component<PageViewProps> {
     }
 }
 
-@component({ type: "header" })
-export class PageViewHeader extends React.Component<{ height: number }> {
-    static defaultProps: PageViewHeader["props"] = { height: 50 };
+export interface PageViewHeaderProps {
+    height: number
+}
+
+@component({ type: PageView.headerTypeName })
+export class PageViewHeader extends React.Component<PageViewHeaderProps> {
+    static defaultProps: PageViewHeaderProps = { height: 50 };
 
     render() {
         return <View className="header">
@@ -52,9 +58,13 @@ export class PageViewHeader extends React.Component<{ height: number }> {
     }
 }
 
-@component({ type: "footer" })
-export class PageViewFooter extends React.Component<{ height: number }> {
-    static defaultProps: PageViewFooter["props"] = { height: 50 };
+export interface PageViewFooterProps {
+    height: number
+}
+
+@component({ type: PageView.footerTypeName })
+export class PageViewFooter extends React.Component<PageViewFooterProps> {
+    static defaultProps: PageViewFooterProps = { height: 50 };
     render() {
         return <View className="footer">
             {this.props.children}
@@ -62,7 +72,7 @@ export class PageViewFooter extends React.Component<{ height: number }> {
     }
 }
 
-@component({ type: BodyTypeName })
+@component({ type: PageView.bodyTypeName })
 export class PageViewBody extends React.Component {
     render() {
         return <View className="body">

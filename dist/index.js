@@ -1,6 +1,6 @@
 /*!
  * 
- *  taro-builder-core v1.0.8
+ *  taro-builder-core v1.0.11
  * 
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -307,7 +307,6 @@ const components_1 = __webpack_require__(/*! @tarojs/components */ "@tarojs/comp
 const maishu_jueying_core_1 = __webpack_require__(/*! maishu-jueying-core */ "./node_modules/maishu-jueying-core/out/index.js");
 const callback_1 = __webpack_require__(/*! maishu-toolkit/out/callback */ "./node_modules/maishu-toolkit/out/callback.js");
 let PageViewContext = React.createContext({});
-const BodyTypeName = "section";
 let PageView = class PageView extends React.Component {
     constructor(props) {
         super(props);
@@ -321,6 +320,9 @@ let PageView = class PageView extends React.Component {
             React.createElement(PageViewContext.Provider, { value: { pageView: this } }, this.props.children));
     }
 };
+PageView.headerTypeName = "header";
+PageView.footerTypeName = "footer";
+PageView.bodyTypeName = "section";
 PageView = __decorate([
     maishu_jueying_core_1.component()
 ], PageView);
@@ -332,7 +334,7 @@ let PageViewHeader = class PageViewHeader extends React.Component {
 };
 PageViewHeader.defaultProps = { height: 50 };
 PageViewHeader = __decorate([
-    maishu_jueying_core_1.component({ type: "header" })
+    maishu_jueying_core_1.component({ type: PageView.headerTypeName })
 ], PageViewHeader);
 exports.PageViewHeader = PageViewHeader;
 let PageViewFooter = class PageViewFooter extends React.Component {
@@ -342,7 +344,7 @@ let PageViewFooter = class PageViewFooter extends React.Component {
 };
 PageViewFooter.defaultProps = { height: 50 };
 PageViewFooter = __decorate([
-    maishu_jueying_core_1.component({ type: "footer" })
+    maishu_jueying_core_1.component({ type: PageView.footerTypeName })
 ], PageViewFooter);
 exports.PageViewFooter = PageViewFooter;
 let PageViewBody = class PageViewBody extends React.Component {
@@ -351,7 +353,7 @@ let PageViewBody = class PageViewBody extends React.Component {
     }
 };
 PageViewBody = __decorate([
-    maishu_jueying_core_1.component({ type: BodyTypeName })
+    maishu_jueying_core_1.component({ type: PageView.bodyTypeName })
 ], PageViewBody);
 exports.PageViewBody = PageViewBody;
 class BaseComponent extends React.Component {

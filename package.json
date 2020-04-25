@@ -1,6 +1,6 @@
 {
     "name": "taro-builder-core",
-    "version": "1.0.8",
+    "version": "1.0.11",
     "types": "./out/index.d.ts",
     "main": "./dist/index.js",
     "scripts": {

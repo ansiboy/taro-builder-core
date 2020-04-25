@@ -12,19 +12,24 @@ export declare class PageView extends React.Component<PageViewProps> {
     childComponentCreated: Callback<{
         component: React.Component<{}, {}, any>;
     }>;
+    static headerTypeName: string;
+    static footerTypeName: string;
+    static bodyTypeName: string;
     constructor(props: PageViewProps);
     render(): JSX.Element;
 }
-export declare class PageViewHeader extends React.Component<{
+export interface PageViewHeaderProps {
     height: number;
-}> {
-    static defaultProps: PageViewHeader["props"];
+}
+export declare class PageViewHeader extends React.Component<PageViewHeaderProps> {
+    static defaultProps: PageViewHeaderProps;
     render(): JSX.Element;
 }
-export declare class PageViewFooter extends React.Component<{
+export interface PageViewFooterProps {
     height: number;
-}> {
-    static defaultProps: PageViewFooter["props"];
+}
+export declare class PageViewFooter extends React.Component<PageViewFooterProps> {
+    static defaultProps: PageViewFooterProps;
     render(): JSX.Element;
 }
 export declare class PageViewBody extends React.Component {

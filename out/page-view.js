@@ -11,7 +11,6 @@ const components_1 = require("@tarojs/components");
 const maishu_jueying_core_1 = require("maishu-jueying-core");
 const callback_1 = require("maishu-toolkit/out/callback");
 let PageViewContext = React.createContext({});
-const BodyTypeName = "section";
 let PageView = class PageView extends React.Component {
     constructor(props) {
         super(props);
@@ -25,6 +24,9 @@ let PageView = class PageView extends React.Component {
             React.createElement(PageViewContext.Provider, { value: { pageView: this } }, this.props.children));
     }
 };
+PageView.headerTypeName = "header";
+PageView.footerTypeName = "footer";
+PageView.bodyTypeName = "section";
 PageView = __decorate([
     maishu_jueying_core_1.component()
 ], PageView);
@@ -36,7 +38,7 @@ let PageViewHeader = class PageViewHeader extends React.Component {
 };
 PageViewHeader.defaultProps = { height: 50 };
 PageViewHeader = __decorate([
-    maishu_jueying_core_1.component({ type: "header" })
+    maishu_jueying_core_1.component({ type: PageView.headerTypeName })
 ], PageViewHeader);
 exports.PageViewHeader = PageViewHeader;
 let PageViewFooter = class PageViewFooter extends React.Component {
@@ -46,7 +48,7 @@ let PageViewFooter = class PageViewFooter extends React.Component {
 };
 PageViewFooter.defaultProps = { height: 50 };
 PageViewFooter = __decorate([
-    maishu_jueying_core_1.component({ type: "footer" })
+    maishu_jueying_core_1.component({ type: PageView.footerTypeName })
 ], PageViewFooter);
 exports.PageViewFooter = PageViewFooter;
 let PageViewBody = class PageViewBody extends React.Component {
@@ -55,7 +57,7 @@ let PageViewBody = class PageViewBody extends React.Component {
     }
 };
 PageViewBody = __decorate([
-    maishu_jueying_core_1.component({ type: BodyTypeName })
+    maishu_jueying_core_1.component({ type: PageView.bodyTypeName })
 ], PageViewBody);
 exports.PageViewBody = PageViewBody;
 class BaseComponent extends React.Component {

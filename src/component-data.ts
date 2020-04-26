@@ -1,4 +1,4 @@
-import { ComponentData as BaseComponentData } from "maishu-jueying-core";
+export { ComponentData } from "maishu-jueying-core";
 
 export interface ComponentProps {
     ref?: any;
@@ -6,6 +6,3 @@ export interface ComponentProps {
     id: string;
 }
 
-export interface ComponentData extends BaseComponentData<ComponentProps> {
-
-}

@@ -17,13 +17,10 @@ export interface PageViewState {
 
 let PageViewContext = React.createContext<{ pageView?: PageView }>({})
 
-@component()
+@component({ type: PageView.typeName })
 export class PageView extends React.Component<PageViewProps> {
     childComponentCreated = new Callback<{ component: React.Component }>();
-
-    static headerTypeName = "header";
-    static footerTypeName = "footer";
-    static bodyTypeName = "section";
+    static typeName = "PageView";
 
     constructor(props: PageViewProps) {
         super(props)
@@ -47,12 +44,14 @@ export interface PageViewHeaderProps {
     height: number
 }
 
-@component({ type: PageView.headerTypeName })
+@component({ type: PageViewHeader.typeName })
 export class PageViewHeader extends React.Component<PageViewHeaderProps> {
     static defaultProps: PageViewHeaderProps = { height: 50 };
+    static typeName = "header";
+    static className = "header";
 
     render() {
-        return <View className="header">
+        return <View className={PageViewHeader.className}>
             {this.props.children}
         </View>
     }
@@ -62,20 +61,27 @@ export interface PageViewFooterProps {
     height: number
 }
 
-@component({ type: PageView.footerTypeName })
+@component({ type: PageViewFooter.typeName })
 export class PageViewFooter extends React.Component<PageViewFooterProps> {
     static defaultProps: PageViewFooterProps = { height: 50 };
+    static typeName = "footer";
+    static className = "footer";
+
     render() {
-        return <View className="footer">
+        return <View className={PageViewFooter.className}>
             {this.props.children}
         </View>
     }
 }
 
-@component({ type: PageView.bodyTypeName })
+@component({ type: PageViewBody.typeName })
 export class PageViewBody extends React.Component {
+
+    static typeName = "section";
+    static className = "body";
+
     render() {
-        return <View className="body">
+        return <View className={PageViewBody.className}>
             {this.props.children}
         </View>
     }

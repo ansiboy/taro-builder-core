@@ -1,3 +1,4 @@
 export * from "maishu-jueying-core";
-export { PageView, PageViewBody, PageViewFooter, PageViewHeader } from "./page-view";
+export { Page, PageBody, PageFooter, PageHeader, PageHeaderProps, PageFooterProps } from "./page-view";
 export { ComponentData, ComponentProps } from "./component-data";
+export { ComponentInfo, ComponentTarget, component } from "./component";

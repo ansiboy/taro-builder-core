@@ -15,19 +15,15 @@ export interface PageViewState {
 
 }
 
-let PageViewContext = React.createContext<{ pageView?: PageView }>({})
+let PageViewContext = React.createContext<{ pageView?: Page }>({})
 
-@component({ type: PageView.typeName })
-export class PageView extends React.Component<PageViewProps> {
+@component({ type: Page.typeName })
+export class Page extends React.Component<PageViewProps> {
     childComponentCreated = new Callback<{ component: React.Component }>();
     static typeName = "PageView";
 
     constructor(props: PageViewProps) {
         super(props)
-
-        this.childComponentCreated.add((args) => {
-
-        })
     }
 
     render() {
@@ -40,48 +36,50 @@ export class PageView extends React.Component<PageViewProps> {
     }
 }
 
-export interface PageViewHeaderProps {
-    height: number
+export interface PageHeaderProps {
+    height: number,
+    visible: boolean,
 }
 
-@component({ type: PageViewHeader.typeName })
-export class PageViewHeader extends React.Component<PageViewHeaderProps> {
-    static defaultProps: PageViewHeaderProps = { height: 50 };
+@component({ type: PageHeader.typeName })
+export class PageHeader extends React.Component<PageHeaderProps> {
+    static defaultProps: PageHeaderProps = { height: 50, visible: true };
     static typeName = "header";
     static className = "header";
 
     render() {
-        return <View className={PageViewHeader.className}>
+        return <View className={PageHeader.className}>
             {this.props.children}
         </View>
     }
 }
 
-export interface PageViewFooterProps {
-    height: number
+export interface PageFooterProps {
+    height: number,
+    visible: boolean,
 }
 
-@component({ type: PageViewFooter.typeName })
-export class PageViewFooter extends React.Component<PageViewFooterProps> {
-    static defaultProps: PageViewFooterProps = { height: 50 };
+@component({ type: PageFooter.typeName })
+export class PageFooter extends React.Component<PageFooterProps> {
+    static defaultProps: PageFooterProps = { height: 50, visible: true };
     static typeName = "footer";
     static className = "footer";
 
     render() {
-        return <View className={PageViewFooter.className}>
+        return <View className={PageFooter.className}>
             {this.props.children}
         </View>
     }
 }
 
-@component({ type: PageViewBody.typeName })
-export class PageViewBody extends React.Component {
+@component({ type: PageBody.typeName })
+export class PageBody extends React.Component {
 
     static typeName = "section";
     static className = "body";
 
     render() {
-        return <View className={PageViewBody.className}>
+        return <View className={PageBody.className}>
             {this.props.children}
         </View>
     }

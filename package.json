@@ -1,6 +1,6 @@
 {
     "name": "taro-builder-core",
-    "version": "1.0.21",
+    "version": "1.0.37",
     "types": "./out/index.d.ts",
     "main": "./dist/index.js",
     "scripts": {
@@ -8,7 +8,7 @@
     },
     "dependencies": {
         "@tarojs/components": "^3.0.0-experimental.5",
-        "maishu-jueying-core": "^1.1.17",
+        "maishu-jueying-core": "^1.1.21",
         "maishu-toolkit": "^1.3.3",
         "react": "^16.13.1",
         "react-dom": "^16.13.1"

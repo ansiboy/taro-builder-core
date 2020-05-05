@@ -10,9 +10,10 @@ export interface PageFooterProps extends ComponentProps {
 
 @component({ type: PageFooter.typeName })
 export class PageFooter extends React.Component<PageFooterProps> {
-    static defaultProps: Partial<PageFooterProps> = { height: 50, visible: true };
     static typeName = "footer";
     static className = "footer";
+    static id = "page-footer";
+    static defaultProps: PageFooterProps = { id: PageFooter.id, height: 50, visible: true };
 
     render() {
         let { height, visible } = this.props;

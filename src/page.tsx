@@ -1,5 +1,7 @@
 import * as React from "react";
 import { View } from "@tarojs/components";
+import Taro from "@tarojs/taro";
+
 import { component, parseComponentData } from "maishu-jueying-core";
 import { CSSProperties } from "react";
 import { Callback } from "maishu-toolkit/out/callback";
@@ -37,7 +39,7 @@ export class Page extends React.Component<PageProps> {
         let childComponents = children.map(o => <React.Fragment key={o.id}>
             {parseComponentData(o)}
         </React.Fragment>)
-        return <View className={Page.className} style={pageStyle}>
+        return <View className={`${Page.className} ${Taro.getEnv()}`} style={pageStyle}>
             <PageContext.Provider value={{ page: this, pageData }}>
                 {childComponents}
             </PageContext.Provider>

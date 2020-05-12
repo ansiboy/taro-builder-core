@@ -15,7 +15,7 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     externals: [
-        "react", "react-dom", "@tarojs/components"],
+        "react", "react-dom", "@tarojs/components", "@tarojs/taro"],
     plugins: [
         new webpack.BannerPlugin(license),
     ],

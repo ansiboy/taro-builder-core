@@ -11,6 +11,7 @@
         "jsx": "react",
         "strict": true,
         "strictPropertyInitialization": false,
+        "esModuleInterop": true,
         "baseUrl": "./",
         "paths": {
             "csstype": [
@@ -25,8 +26,6 @@
         }
     },
     "exclude": [
-        "node_modules",
-        "dist",
-        "lib"
+        "../node_modules",
     ],
 }

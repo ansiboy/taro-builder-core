@@ -33,6 +33,7 @@ export class PageBody extends React.Component<PageBodyProps> {
                     }
                     if (footer != null && (footer.props as PageFooterProps).visible) {
                         let p = footer.props as PageHeaderProps;
+                        style.marginBottom = p.height;
                         style.height = `calc(100% - ${(style.marginTop as number) + p.height}px)`;
                     }
 

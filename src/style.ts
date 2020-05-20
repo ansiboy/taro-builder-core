@@ -19,6 +19,7 @@ if (!document.getElementById(elementId) && document.head != null) {
     .${Page.className} .${PageBody.className} {
         overflow-y: auto;
         overflow-x: hidden;
+        height  : 100%;
     }
     
     .${Page.className} .${PageBody.className}::-webkit-scrollbar-track-piece {

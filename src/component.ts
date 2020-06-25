@@ -1,8 +1,6 @@
 import { ComponentInfo as BaseComponentInfo, registerComponent, } from "maishu-jueying-core";
 import * as React from "react";
 
-export type ComponentTarget = "header" | "footer" | "body";
-
 export type ComponentInfo = BaseComponentInfo & { group: string };
 
 /** 组件标记，用于将指定的组件标记为可被外部加载 */

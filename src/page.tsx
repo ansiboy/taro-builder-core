@@ -2,16 +2,12 @@ import * as React from "react";
 import { View } from "@tarojs/components";
 import Taro from "@tarojs/taro";
 
-import { component, parseComponentData } from "maishu-jueying-core";
+import { component, parseComponentData, registerComponent } from "maishu-jueying-core";
 import { CSSProperties } from "react";
 import { Callback } from "maishu-toolkit/out/callback";
 import { PageData } from "./component-data";
 
 export interface PageProps {
-    // showHeader?: boolean,
-    // showFooter?: boolean,
-    // headerHeight?: number,
-    // footerHeight?: number,
     pageData: PageData
 }
 
@@ -24,12 +20,11 @@ export let PageContext = React.createContext<{ page?: Page, pageData?: PageData 
 @component({ type: Page.typeName })
 export class Page extends React.Component<PageProps> {
     childComponentCreated = new Callback<{ component: React.Component }>();
-    static typeName = "PageView";
+    static typeName = "article";
     static className = "page-view";
 
     constructor(props: PageProps) {
         super(props)
-        console.log("Page")
     }
 
     render() {
@@ -46,3 +41,10 @@ export class Page extends React.Component<PageProps> {
         </View>
     }
 }
+
+//========================================================
+// 兼容旧代码
+registerComponent("page", Page);
+//========================================================
+
+

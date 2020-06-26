@@ -9,7 +9,7 @@
         "outDir": "../out",
         "rootDir": ".",
         "jsx": "react",
-        "strict": true,
+        "strict": false,
         "strictPropertyInitialization": false,
         "esModuleInterop": true,
         "baseUrl": "./",

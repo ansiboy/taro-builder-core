@@ -1,5 +1,5 @@
 export { componentTypes, registerComponent } from "maishu-jueying-core";
-export { Page, PageProps, PageContext } from "./page";
+export { Page as Page, PageProps, PageContext } from "./page";
 export { ComponentData, ComponentProps, PageData } from "./component-data";
 export { ComponentInfo, component } from "./component";
 export { PageHeader, PageHeaderProps } from "./page-header";
